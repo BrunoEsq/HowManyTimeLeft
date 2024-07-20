@@ -6,6 +6,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva:wght@100..400&display=swap"
+        rel="stylesheet">
 </head>
 <style>
     /* Settings */
@@ -120,9 +125,28 @@
 </style>
 <style>
     body {
-
-        background: #ff8c8c;
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        height: 100vh;
+        font-family: 'Playwrite HR Lijeva', sans-serif;
     }
+
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
 
     .height {
 
@@ -189,7 +213,6 @@
             </div>
         </div>
     </nav>
-
     <div class="container">
 
         <div class="row height d-flex justify-content-center align-items-center">
@@ -198,9 +221,10 @@
 
                 <div class="form">
                     <i class="fa fa-search"></i>
-                    <input type="text" id="busqueda" class="form-control form-input" placeholder="Search anything..."
+                    <input type="text" id="busqueda" class="form-control form-input" placeholder="Search for any game"
                         oninput="juegosDisponibles()">
-                    <span class="left-pan"><i class="fa fa-microphone"></i></span>
+                    <span class="left-pan"><i class="fa fa-microphone"
+                            onclick="iniciarReconocimientoDeVoz()"></i></span>
                 </div>
 
             </div>
@@ -222,7 +246,7 @@
         var URLAPI = "https://api.rawg.io/api/games?key=1b18eeed59504542baada61eb336bc78"
         async function juegosDisponibles() {
             try {
-                
+
                 const busqueda = document.getElementById("busqueda").value;
                 console.warn(busqueda);
                 URLAPI = `https://api.rawg.io/api/games?key=${apiKey}&search=${encodeURIComponent(busqueda)}&page_size=10&page=1`;
@@ -241,7 +265,7 @@
                 padre.innerHTML = '';
 
                 for (let i = 0; i < juegos.length; i++) {
-                    
+
 
                     const hijo = document.createElement("div");
                     hijo.classList.add("b-game-card");
@@ -261,6 +285,32 @@
 
             } catch (error) {
                 console.error('Error:', error);
+            }
+        }
+
+
+    </script>
+    <script>
+        function iniciarReconocimientoDeVoz() {
+            let rec;
+            if (!("webkitSpeechRecognition" in window)) {
+                alert("No puedes usar esta funcionalidad");
+                return; // Salir de la función si no se soporta
+            }
+
+            rec = new webkitSpeechRecognition();
+            rec.lang = "es-AR";
+            rec.continuous = true;
+            rec.interimResults = true;
+            rec.addEventListener("result", iniciar);
+            rec.start(); // Mueve rec.start() dentro del bloque else para que solo se ejecute si se soporta
+
+            function iniciar(event) {
+                for (let i = event.resultIndex; i < event.results.length; i++) {
+
+                    busqueda.value = event.results[i][0].transcript;
+                    console.log(event.results[i][0].transcript);
+                }
             }
         }
 
