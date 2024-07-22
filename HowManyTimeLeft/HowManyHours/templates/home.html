@@ -9,8 +9,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva:wght@100..400&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva:wght@100..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <style>
     /* Settings */
@@ -38,6 +38,35 @@
         background: var(--color-1);
     }
 
+    .divtexto {
+        position: absolute;
+        width: 100%;
+        /* Puedes ajustar este valor según sea necesario */
+        max-width: 500px;
+        /* Un ejemplo de ancho máximo */
+        height: 100px;
+        z-index: 20 !important;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        /* Activar flexbox */
+        justify-content: center;
+        /* Centrar horizontalmente el contenido */
+        align-items: center;
+        /* Centrar verticalmente el contenido */
+        text-align: center;
+        /* Opcional: alinear el texto en el centro horizontalmente */
+        font-family: 'Bebas Neue', sans-serif; /* Aplicar la fuente Bebas Neue */
+            font-size: 2rem; /* Tamaño de la fuente, ajusta según sea necesario */
+            color: white; /* Color del texto */
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+    }
+
     .l-container {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
@@ -58,6 +87,25 @@
         width: 100%;
         padding-bottom: 150%;
         perspective: 1000px;
+        display: flex;
+        /* Activar flexbox */
+        justify-content: center;
+        /* Centrar horizontalmente */
+        align-items: center;
+        /* Centrar verticalmente */
+    }
+
+    .divtexto {
+        position: absolute;
+        width: 100%;
+        /* Puedes ajustar este valor según sea necesario */
+        max-width: 500px;
+        /* Un ejemplo de ancho máximo */
+        height: 100px;
+        z-index: 20 !important;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .b-game-card__cover {
@@ -198,6 +246,12 @@
         box-shadow: none;
         border: none;
     }
+
+    .bebas-neue-regular {
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
 </style>
 
 <body>
@@ -266,28 +320,49 @@
 
                 for (let i = 0; i < juegos.length; i++) {
 
-
                     const hijo = document.createElement("div");
                     hijo.classList.add("b-game-card");
+                    hijo.dataset.gameId = juegos[i].id;
+                    const contenidoDiv = document.createElement("div");
+
+                    contenidoDiv.classList.add("divtexto");
+                    contenidoDiv.style.zIndex = "999";
+                    const nombrejuego = document.createTextNode(juegos[i].name);
+
+                    contenidoDiv.appendChild(nombrejuego);
+                    hijo.appendChild(contenidoDiv);
 
                     const sobrino = document.createElement("div");
                     sobrino.classList.add("b-game-card__cover");
 
-
                     sobrino.style.backgroundImage = `url(${juegos[i].background_image})`;
 
                     hijo.appendChild(sobrino);
+
+                    hijo.addEventListener("click", obtenerDetallesDelJuego);
+
                     padre.appendChild(hijo);
+
                 }
-
-
-
-
             } catch (error) {
                 console.error('Error:', error);
             }
         }
 
+        async function obtenerDetallesDelJuego(){
+            const gameId = event.currentTarget.dataset.gameId;
+
+            var respuestaJuego = await fetch(`https://api.rawg.io/api/games/${gameId}?key=${apiKey}`)
+            console.log(respuestaJuego);
+
+            if (!respuestaJuego.ok) {
+                    throw new Error('Error en la solicitud de la API');
+                }
+            
+            const dJuego = await respuestaJuego.json();
+            
+            alert(dJuego.description)
+        }
 
     </script>
     <script>
@@ -295,7 +370,7 @@
             let rec;
             if (!("webkitSpeechRecognition" in window)) {
                 alert("No puedes usar esta funcionalidad");
-                return; // Salir de la función si no se soporta
+                return;
             }
 
             rec = new webkitSpeechRecognition();
@@ -303,7 +378,7 @@
             rec.continuous = true;
             rec.interimResults = true;
             rec.addEventListener("result", iniciar);
-            rec.start(); // Mueve rec.start() dentro del bloque else para que solo se ejecute si se soporta
+            rec.start();
 
             function iniciar(event) {
                 for (let i = event.resultIndex; i < event.results.length; i++) {
