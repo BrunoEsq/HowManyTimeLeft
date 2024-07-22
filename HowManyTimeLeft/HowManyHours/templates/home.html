@@ -9,7 +9,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva:wght@100..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva:wght@100..400&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <style>
@@ -32,6 +33,7 @@
     }
 
     body {
+        
         justify-content: center;
         align-items: center;
         min-height: 100vh;
@@ -57,14 +59,18 @@
         /* Centrar verticalmente el contenido */
         text-align: center;
         /* Opcional: alinear el texto en el centro horizontalmente */
-        font-family: 'Bebas Neue', sans-serif; /* Aplicar la fuente Bebas Neue */
-            font-size: 2rem; /* Tamaño de la fuente, ajusta según sea necesario */
-            color: white; /* Color del texto */
-            text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+        font-family: 'Bebas Neue', sans-serif;
+        /* Aplicar la fuente Bebas Neue */
+        font-size: 2rem;
+        /* Tamaño de la fuente, ajusta según sea necesario */
+        color: white;
+        /* Color del texto */
+        text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+
     }
 
     .l-container {
@@ -88,11 +94,24 @@
         padding-bottom: 150%;
         perspective: 1000px;
         display: flex;
-        /* Activar flexbox */
         justify-content: center;
-        /* Centrar horizontalmente */
         align-items: center;
-        /* Centrar verticalmente */
+        transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease, top 0.5s ease, left 0.5s ease;
+        transform-origin: center center;
+        /* Cambio de origen para la transformación */
+        position: relative;
+    }
+
+    .expanded {
+        width: 100vw !important;
+        height: 100vh !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: scale(1) !important;
+        /* Escala el div al tamaño completo */
+        position: fixed !important;
+        z-index: 1000 !important;
+        background-color: white !important;
     }
 
     .divtexto {
@@ -349,20 +368,50 @@
             }
         }
 
-        async function obtenerDetallesDelJuego(){
-            const gameId = event.currentTarget.dataset.gameId;
+        async function obtenerDetallesDelJuego(event) {
+            try {
+                const gameId = event.currentTarget.dataset.gameId;
+                const divClicado = event.currentTarget;
+                const respuestaJuego = await fetch(`https://api.rawg.io/api/games/${gameId}?key=${apiKey}`);
 
-            var respuestaJuego = await fetch(`https://api.rawg.io/api/games/${gameId}?key=${apiKey}`)
-            console.log(respuestaJuego);
-
-            if (!respuestaJuego.ok) {
+                if (!respuestaJuego.ok) {
                     throw new Error('Error en la solicitud de la API');
                 }
-            
-            const dJuego = await respuestaJuego.json();
-            
-            alert(dJuego.description)
+
+                const dJuego = await respuestaJuego.json();
+
+
+                const rect = divClicado.getBoundingClientRect();
+
+
+                divClicado.style.width = `${rect.width}px`;
+                divClicado.style.height = `${rect.height}px`;
+                divClicado.style.position = "fixed";
+                divClicado.style.left = `${rect.left}px`;
+                divClicado.style.top = `${rect.top-100000}px`;
+                divClicado.style.zIndex = "1000";
+                divClicado.style.transformOrigin = "center top";
+                divClicado.style.transform = "scale(1, 1)";
+                divClicado.style.backgroundImage = `url(${dJuego.background_image})`;
+
+
+                divClicado.offsetHeight;
+
+
+                setTimeout(() => {
+                    divClicado.classList.add("expanded");
+                }, 10);
+
+                divClicado.innerHTML = `
+            <h2">${dJuego.name}</h2>
+            <p>${dJuego.description_raw}</p>
+            <button onclick="cerrarDetalles(event)";>Cerrar</button>
+        `;
+            } catch (error) {
+                console.error('Error:', error);
+            }
         }
+
 
     </script>
     <script>
