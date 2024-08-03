@@ -104,7 +104,7 @@
 
     .expanded {
         width: 100vw !important;
-        height: 100vh !important;
+        /* height: 100vh !important; */
         top: 0 !important;
         left: 0 !important;
         transform: scale(1) !important;
@@ -384,8 +384,8 @@
                 const rect = divClicado.getBoundingClientRect();
 
 
-                divClicado.style.width = `${rect.width}px`;
-                divClicado.style.height = `${rect.height}px`;
+                // divClicado.style.width = `${rect.width}px`;
+                // divClicado.style.height = `${rect.height}px`;
                 divClicado.style.position = "fixed";
                 divClicado.style.left = `${rect.left}px`;
                 divClicado.style.top = `${rect.top-100000}px`;
@@ -403,7 +403,7 @@
                 }, 10);
 
                 divClicado.innerHTML = `
-            <h2">${dJuego.name}</h2>
+            <h2>${dJuego.name}</h2>
             <p>${dJuego.description_raw}</p>
             <button onclick="cerrarDetalles(event)";>Cerrar</button>
         `;

@@ -1,0 +1,187 @@
+{
+    "id": 22,
+    "slug": "farpoint",
+    "name": "Farpoint",
+    "name_original": "Farpoint",
+    "description": "<p>Farpoint is a riveting VR space adventure set on a hostile alien planet. On a mission to pick up scientists studying an anomaly near Jupiter, a sudden rupture nearby sends you and their station crashing onto an unknown alien world.<br />\nSeparated from your colleagues, you must use holographic logs scattered throughout the landscape to reunite with the scientists and escape the planet. Explore and discover the secrets of the planet, blasting your way through hordes of indigenous and alien life as you keep moving to survive.<br />\n•    Experience a full-length single player campaign as you traverse an unnerving alien world, searching for survivors and a way home.<br />\n•    Master various weapons – from charged plasma rifles to a railgun - in the fight through packs of hostile alien life.<br />\n•    Explore and fight together with a friend in 2 player online co-op.<em><br />\n</em>Active PS Plus membership required.<br />\nVR Games may cause some players to experience motion sickness.<br />\nUse of PSN and SEN account are subject to the Terms of Service and User Agreement and applicable privacy policy (see terms at sonyentertainmentnetwork.com/terms-of-service &amp; sonyentertainmentnetwork.com/privacy-policy).<br />\nOnline features may be terminated at any time.<br />\n*Online multiplayer requires a PlayStation®Plus membership.<br />\nOnline Play (Optional)<br />\nPlayStation®VR Required<br />\nPlayStation®Camera Required<br />\nEnhanced play with 1 PS VR Aim controller<br />\nSoftware subject to license (us.playstation.com/softwarelicense). Online features require an account and are subject to terms of service and applicable privacy policy (playstationnetwork.com/terms-of-service &amp; playstationnetwork.com/privacy-policy). One-time license fee for play on account’s designated primary PS4™ system and other PS4™ systems when signed in with that account.<br />\nPlaystation®4 system, PlayStation®VR and PlayStation®Camera are required to experience VR functionality.<br />",
+    "metacritic": 71,
+    "metacritic_platforms": [
+        {
+            "metascore": 71,
+            "url": "https://www.metacritic.com/game/playstation-4/farpoint",
+            "platform": {
+                "platform": 18,
+                "name": "PlayStation 4",
+                "slug": "playstation4"
+            }
+        }
+    ],
+    "released": "2017-05-16",
+    "tba": false,
+    "updated": "2023-12-09T15:02:10",
+    "background_image": "https://media.rawg.io/media/games/fd3/fd3ba352de494fe390dfe53d326c646a.jpg",
+    "background_image_additional": "https://media.rawg.io/media/screenshots/c66/c66f29958239028c3620ab2e5814f0b3.jpg",
+    "website": "https://www.playstation.com/en-us/games/farpoint-ps4/",
+    "rating": 3.49,
+    "rating_top": 4,
+    "ratings": [
+        {
+            "id": 4,
+            "title": "recommended",
+            "count": 40,
+            "percent": 44.94
+        },
+        {
+            "id": 3,
+            "title": "meh",
+            "count": 25,
+            "percent": 28.09
+        },
+        {
+            "id": 5,
+            "title": "exceptional",
+            "count": 13,
+            "percent": 14.61
+        },
+        {
+            "id": 1,
+            "title": "skip",
+            "count": 11,
+            "percent": 12.36
+        }
+    ],
+    "reactions": {},
+    "added": 482,
+    "added_by_status": {
+        "yet": 29,
+        "owned": 375,
+        "beaten": 28,
+        "toplay": 12,
+        "dropped": 32,
+        "playing": 6
+    },
+    "playtime": 0,
+    "screenshots_count": 6,
+    "movies_count": 0,
+    "creators_count": 0,
+    "achievements_count": 235,
+    "parent_achievements_count": 47,
+    "reddit_url": "",
+    "reddit_name": "",
+    "reddit_description": "",
+    "reddit_logo": "",
+    "reddit_count": 0,
+    "twitch_count": 115,
+    "youtube_count": 140188,
+    "reviews_text_count": 1,
+    "ratings_count": 88,
+    "suggestions_count": 388,
+    "alternative_names": [],
+    "metacritic_url": "https://www.metacritic.com/game/playstation-4/farpoint",
+    "parents_count": 0,
+    "additions_count": 0,
+    "game_series_count": 0,
+    "user_game": null,
+    "reviews_count": 89,
+    "saturated_color": "0f0f0f",
+    "dominant_color": "0f0f0f",
+    "parent_platforms": [
+        {
+            "platform": {
+                "id": 2,
+                "name": "PlayStation",
+                "slug": "playstation"
+            }
+        }
+    ],
+    "platforms": [
+        {
+            "platform": {
+                "id": 18,
+                "name": "PlayStation 4",
+                "slug": "playstation4",
+                "image": null,
+                "year_end": null,
+                "year_start": null,
+                "games_count": 6824,
+                "image_background": "https://media.rawg.io/media/games/8cc/8cce7c0e99dcc43d66c8efd42f9d03e3.jpg"
+            },
+            "released_at": "2017-05-16",
+            "requirements": {}
+        }
+    ],
+    "stores": [
+        {
+            "id": 22,
+            "url": "",
+            "store": {
+                "id": 3,
+                "name": "PlayStation Store",
+                "slug": "playstation-store",
+                "domain": "store.playstation.com",
+                "games_count": 7955,
+                "image_background": "https://media.rawg.io/media/games/b7d/b7d3f1715fa8381a4e780173a197a615.jpg"
+            }
+        }
+    ],
+    "developers": [
+        {
+            "id": 13499,
+            "name": "Impulse Gear",
+            "slug": "impulse-gear",
+            "games_count": 1,
+            "image_background": "https://media.rawg.io/media/screenshots/e52/e520535a1316e68e07fc0a52836f57cd.jpg"
+        }
+    ],
+    "genres": [
+        {
+            "id": 2,
+            "name": "Shooter",
+            "slug": "shooter",
+            "games_count": 59491,
+            "image_background": "https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg"
+        }
+    ],
+    "tags": [
+        {
+            "id": 37796,
+            "name": "exclusive",
+            "slug": "exclusive",
+            "language": "eng",
+            "games_count": 4496,
+            "image_background": "https://media.rawg.io/media/games/214/214b29aeff13a0ae6a70fc4426e85991.jpg"
+        },
+        {
+            "id": 33,
+            "name": "VR",
+            "slug": "vr",
+            "language": "eng",
+            "games_count": 12414,
+            "image_background": "https://media.rawg.io/media/games/0fd/0fd84d36596a83ef2e5a35f63a072218.jpg"
+        },
+        {
+            "id": 37797,
+            "name": "true exclusive",
+            "slug": "true-exclusive",
+            "language": "eng",
+            "games_count": 3983,
+            "image_background": "https://media.rawg.io/media/games/dfa/dfa0906773ebb8a50d15548ac5b8ee5e.jpg"
+        }
+    ],
+    "publishers": [
+        {
+            "id": 10212,
+            "name": "Sony Computer Entertainment",
+            "slug": "sony-computer-entertainment",
+            "games_count": 467,
+            "image_background": "https://media.rawg.io/media/games/951/951572a3dd1e42544bd39a5d5b42d234.jpg"
+        }
+    ],
+    "esrb_rating": {
+        "id": 4,
+        "name": "Mature",
+        "slug": "mature"
+    },
+    "clip": null,
+    "description_raw": "Farpoint is a riveting VR space adventure set on a hostile alien planet. On a mission to pick up scientists studying an anomaly near Jupiter, a sudden rupture nearby sends you and their station crashing onto an unknown alien world.\nSeparated from your colleagues, you must use holographic logs scattered throughout the landscape to reunite with the scientists and escape the planet. Explore and discover the secrets of the planet, blasting your way through hordes of indigenous and alien life as you keep moving to survive.\n•    Experience a full-length single player campaign as you traverse an unnerving alien world, searching for survivors and a way home.\n•    Master various weapons – from charged plasma rifles to a railgun - in the fight through packs of hostile alien life.\n•    Explore and fight together with a friend in 2 player online co-op.*\n*Active PS Plus membership required.\nVR Games may cause some players to experience motion sickness.\nUse of PSN and SEN account are subject to the Terms of Service and User Agreement and applicable privacy policy (see terms at sonyentertainmentnetwork.com/terms-of-service & sonyentertainmentnetwork.com/privacy-policy).\nOnline features may be terminated at any time.\n*Online multiplayer requires a PlayStation®Plus membership.\nOnline Play (Optional)\nPlayStation®VR Required\nPlayStation®Camera Required\nEnhanced play with 1 PS VR Aim controller\nSoftware subject to license (us.playstation.com/softwarelicense). Online features require an account and are subject to terms of service and applicable privacy policy (playstationnetwork.com/terms-of-service & playstationnetwork.com/privacy-policy). One-time license fee for play on account’s designated primary PS4™ system and other PS4™ systems when signed in with that account.\nPlaystation®4 system, PlayStation®VR and PlayStation®Camera are required to experience VR functionality.\n©2017 Sony Interactive Entertainment LLC. Farpoint is a trademark of Sony Interactive Entertainment LLC. Created and developed by Impulse Gear, Inc. All trademarks are the property of their respective owners. Appearance in this game does not imply sponsorship or endorsement."
+}
