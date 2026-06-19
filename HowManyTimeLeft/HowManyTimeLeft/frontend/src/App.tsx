@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { BackgroundPaths } from '@/components/ui/background-paths';
 import { GameSearch } from '@/components/GameSearch';

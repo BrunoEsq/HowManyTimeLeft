@@ -1,18 +1,11 @@
 {
-    "builds": [
+    "buildCommand": "cd HowManyTimeLeft/frontend && npm install && npm run build",
+    "outputDirectory": "HowManyTimeLeft/frontend/dist",
+    "framework": "vite",
+    "rewrites": [
         {
-            "src": "HowManyTimeLeft/wsgi.py",
-            "use": "@vercel/python",
-            "config": {
-                "maxLambdaSize": "15mb",
-                "runtime": "python3.9"
-            }
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "HowManyTimeLeft/wsgi.py"
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ]
 }

@@ -1,8 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import { X, Star, Clock, Calendar, Gamepad2 } from 'lucide-react';
+import { Star, Clock, Calendar, Gamepad2 } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { getGameDetails } from '@/services/api';
 import type { GameDetails as GameDetailsType } from '@/types/game';
 
