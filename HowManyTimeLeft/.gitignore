@@ -1,0 +1,123 @@
+# === VARIABLES DE ENTORNO - CRÍTICO ===
+.env
+.env.local
+.env.*.local
+*.env
+
+# === PYTHON / DJANGO ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+virtualenv/
+
+# Django
+db.sqlite3
+db.sqlite3-journal
+*.log
+staticfiles/
+media/
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# === NODE / REACT / VITE ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+.next/
+out/
+
+# Vite cache
+.vite/
+*.local
+
+# === IDE / EDITOR ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+.DS_Store
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# === VERCEL ===
+.vercel
+.vercel.json
+
+# === OTROS ===
+# Thumbnails
+Thumbs.db
+
+# Archivos temporales
+*.tmp
+*.temp
+*.cache
+
+# Logs
+logs/
+*.log
+
+# Testing
+coverage/
+.nyc_output/
+
+# Certificados y keys
+*.pem
+*.key
+*.cert
+
+# Backups
+*.bak
+*.backup
+*.old
+
+# Compiled Python files
+*.egg-info/
+.eggs/
+*.egg
+
+# Migrations (opcional - algunos prefieren subirlas)
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# Static files collected
+staticfiles/
+static_root/
+
+# Claude temp files
+.claude/
