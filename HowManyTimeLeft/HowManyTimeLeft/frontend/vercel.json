@@ -1,15 +1,9 @@
 {
-  "rewrites": [
-    {
-      "source": "/api/games/search",
-      "destination": "/api/games/search"
-    },
-    {
-      "source": "/api/games/:id",
-      "destination": "/api/games/[id]"
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "nodejs20.x"
     }
-  ],
-  "env": {
-    "RAWG_API_KEY": "1b18eeed59504542baada61eb336bc78"
   }
 }

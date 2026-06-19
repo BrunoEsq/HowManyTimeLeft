@@ -2,7 +2,19 @@
     "buildCommand": "cd HowManyTimeLeft/frontend && npm install && npm run build",
     "outputDirectory": "HowManyTimeLeft/frontend/dist",
     "framework": "vite",
+    "functions": {
+        "HowManyTimeLeft/frontend/api/**/*.ts": {
+            "runtime": "nodejs20.x"
+        }
+    },
+    "env": {
+        "RAWG_API_KEY": "@rawg_api_key"
+    },
     "rewrites": [
+        {
+            "source": "/api/:path*",
+            "destination": "/api/:path*"
+        },
         {
             "source": "/(.*)",
             "destination": "/index.html"
