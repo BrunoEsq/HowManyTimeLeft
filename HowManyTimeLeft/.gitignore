@@ -21,6 +21,9 @@ ENV/
 .venv
 virtualenv/
 
+# Images folder
+Images/
+
 # Django
 db.sqlite3
 db.sqlite3-journal
